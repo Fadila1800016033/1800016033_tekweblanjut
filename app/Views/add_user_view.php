@@ -9,42 +9,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     
-    <title>Login Form</title>
+    <title>Tambah Data</title>
   </head>
   <body>
     
-  
   
     <div class="container">
         <div class="row">
         <div class="col-md-4 mx-auto pt-5">
         
-        <form method="POST" action='<?= base_url('Login/Login_action'); ?>'>
+        <form action="/User/save" method="POST">
             <div class="form-group">
-              <h3><center><span>Login Form </span></h3></center>
+              <h3><center><span>Tambah Data</span></h3></center>
 
-                <label for="email">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Email" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="userid">User ID</label>
+                <input type="text" name="user_id" class="form-control" id="user_id" placeholder="User ID">
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                <label for="usernama">Nama</label>
+                <input type="text" name="user_nama" class="form-control" id="user_nama" placeholder="Nama">
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" >
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+            <div class="form-group">
+                <label for="useremail">Email</label>
+                <input type="text" name="user_email" class="form-control" id="user_email" placeholder="E-Mail">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div class="form-group">
+                <label for="userpass">Password</label>
+                <input type="password" name="user_pass" class="form-control" id="user_pass" placeholder="Password">
+            </div>
+          
+            <button type="submit" class="btn btn-primary">Save</button>
             </form>
-            <p>
-                <?php if(!empty(session()->getFlashdata('gagal'))) { ?>
-                    <div class="alert alert-warning">
-                    <?php echo session()->getFlashdata('gagal') ?>
-                    </div>
-                    <?php } ?>
-            </p>
-                
         </div>
         </div>
     </div>

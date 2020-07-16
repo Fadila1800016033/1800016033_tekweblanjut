@@ -9,42 +9,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     
-    <title>Login Form</title>
+    <title>Update Data</title>
   </head>
   <body>
     
-  
   
     <div class="container">
         <div class="row">
         <div class="col-md-4 mx-auto pt-5">
         
-        <form method="POST" action='<?= base_url('Login/Login_action'); ?>'>
+        <form action="/user/update" method="post">
             <div class="form-group">
-              <h3><center><span>Login Form </span></h3></center>
-
-                <label for="email">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Email" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" >
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <p>
-                <?php if(!empty(session()->getFlashdata('gagal'))) { ?>
-                    <div class="alert alert-warning">
-                    <?php echo session()->getFlashdata('gagal') ?>
-                    </div>
-                    <?php } ?>
-            </p>
+              <h3><center><span>Update Data</span></h3></center>
                 
+                
+                <input type="text" name="user_id" class="form-control" id="user_id" value="<?= $userr->user_id;?>" disabled> <br> 
+            </div>
+            <div class="form-group">
+            <label for="usernama">Nama</label>
+                <input type="text" name="user_nama" class="form-control" id="user_nama" value="<?= $userr->user_nama;?>">
+            </div>
+
+            <div class="form-group">
+            <label for="useremail">E-mail</label>
+                <input type="text" name="user_email" class="form-control" id="user_email" value="<?= $userr->user_email;?>">
+            </div>
+
+            <div class="form-group">
+            <label for="userpass">Password</label>
+                <input type="password" name="user_pass" class="form-control" id="user_pass" value="<?= $userr->user_pass;?>" >
+            </div>
+          
+            <button type="submit" class="btn btn-primary">Update</button>
+            </form>
         </div>
         </div>
     </div>
